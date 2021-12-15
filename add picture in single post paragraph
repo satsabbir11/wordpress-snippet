@@ -1,20 +1,20 @@
-add_filter('the_content', 'loraku_insert_post_ads');
+add_filter('the_content', 'sabbir_insert_post_ads');
 
-function loraku_insert_post_ads($content)
+function sabbir_insert_post_ads($content)
 {
 
 	$ad_code = '<a href="https://play.google.com/store/apps/details?id=com.hello_bcs.live_exam&hl=en&gl=US");" class="shak"><img src="https://blog.hellobcs.com/wp-content/uploads/2021/11/HB-app-banner-gif.gif" class="banner_image" alt="First Slide"></a>';
 
 	if (is_single() && !is_admin()) {
 
-		return loraku_insert_after_paragraph($ad_code, 5, $content);
+		return sabbir_insert_after_paragraph($ad_code, 5, $content);
 	}
 
 	return $content;
 }
 // Parent Function that makes the magic happen
 
-function loraku_insert_after_paragraph($insertion, $paragraph_id, $content)
+function sabbir_insert_after_paragraph($insertion, $paragraph_id, $content)
 {
 	$closing_p = '</p>';
 	$paragraphs = explode($closing_p, $content);
